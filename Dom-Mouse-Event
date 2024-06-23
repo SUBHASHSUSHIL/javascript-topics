@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .main {
+            width: 50vw;
+            height: 50vh;
+            display: grid;
+            place-items: center;
+            background-color: rgb(201, 192, 179);
+            color: navy;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main" onmouseover="fun1()" onmouseenter="fun2()" onmousedown="fun3()" onmouseup="fun4()"
+        onclick="fun5()" ondblclick="fun6()" onmousemove="fun7()" onmousewheel="fun8()" onmouseout="fun9()"
+        onmouseleave="fun10()">
+        No Events
+    </div>
+    <script>
+        var div = document.querySelector(".main")
+        function fun1() {
+            div.style.backgroundColor = "black"
+            div.style.color = "white"
+            console.log("onMouse Over Event")
+            div.innerHTML = "onMouse Over Event"
+        }
+        function fun2() {
+            div.style.backgroundColor = "red"
+            div.style.color = "white"
+            console.log("onMouse Enter Event")
+            div.innerHTML = "onMouse Enter Event"
+        }
+        function fun3() {
+            div.style.backgroundColor = "magenta"
+            div.style.color = "white"
+            console.log("onMouse Down Event")
+            div.innerHTML = "onMouse Down Event"
+        }
+        function fun4() {
+            div.style.backgroundColor = "green"
+            div.style.color = "white"
+            console.log("onMouse Up Event")
+            div.innerHTML = "onMouse Up Event"
+        }
+        function fun5() {
+            div.style.backgroundColor = "navy"
+            div.style.color = "white"
+            console.log("onClick Event")
+            div.innerHTML = "onClick Event"
+        }
+        function fun6() {
+            div.style.backgroundColor = "aqua"
+            div.style.color = "navy"
+            console.log("on Double Click Event")
+            div.innerHTML = "on Double Click Event"
+        }
+        function fun7() {
+            div.style.backgroundColor = "black"
+            div.style.color = "white"
+            console.log("onMouse Move Event")
+            div.innerHTML = "onMouse Move Event"
+        }
+        function fun8() {
+            div.style.backgroundColor = "cyan"
+            div.style.color = "navy"
+            console.log("onMouse Wheel Event")
+            div.innerHTML = "onMouse Wheel Event"
+        }
+        function fun9() {
+            div.style.backgroundColor = "orangered"
+            div.style.color = "white"
+            console.log("onMouse Out Event")
+            div.innerHTML = "onMouse Out Event"
+        }
+        function fun10() {
+            div.style.backgroundColor = "purple"
+            div.style.color = "white"
+            console.log("onMouse Leave Event")
+            div.innerHTML = "onMouse Leave Event"
+        }
+    </script>
+</body>
+
+</html>
