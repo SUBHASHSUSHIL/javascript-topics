@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+        }
+        .center{
+            width: 70%;
+            margin: auto;
+            height: 100%;
+        }
+        .first{
+            width: 100%;
+            display: flex;
+            height: 7%;
+        }
+        .second{
+            height: 92%;
+            overflow: auto;
+        }
+        .first button{
+            width: 50%;
+            background-color: green;
+            color: white;
+            padding: 10px 0;
+            border: none;
+            margin: 1px;
+        }
+        .second p{
+            background-color: navy;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .material-symbols-outlined{
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="center">
+            <div class="first">
+                <button onclick="fun1()">Create</button>
+                <button onclick="fun2()">Delete</button>
+            </div>
+            <div class="second">
+            </div>
+        </div>
+    </div>
+    <script>
+        var second = document.querySelector(".second")
+        var count  = 1
+        function fun1(){
+            var p = document.createElement("p")
+            p.innerHTML = `This is Paragraph p${count} <span class="material-symbols-outlined" onclick="remove('p${count}')">delete_forever</span>`
+            p.id = `p${count}`
+            second.appendChild(p)
+            count++
+        }
+        function fun2(){
+            // console.log(second.childNodes)
+            if(second.childNodes.length>1)
+            second.removeChild(second.childNodes[1])
+        }
+        function remove(id){
+            var p = document.getElementById(id)
+            second.removeChild(p)
+        }
+    </script>
+</body>
+</html>
