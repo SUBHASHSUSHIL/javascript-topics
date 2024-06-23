@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .center{
+            width: 30%;
+            height: 18%;
+        }
+        .center h3{
+            background-color: green;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .items{
+            display: flex;
+            width: 100%;
+        }
+        .item{
+            width: 25%;
+        }
+        .item h4{   
+            background-color: black;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+        .item h5{
+            background-color: navy;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <h3 id="heading">Time in New Year 2025</h3>
+            <div class="items">
+                <div class="item">
+                    <h4 id="day">00</h4>
+                    <h5>Days</h5>
+                </div>
+                <div class="item">
+                    <h4 id="hour">00</h4>
+                    <h5>Hours</h5>
+                </div>
+                <div class="item">
+                    <h4 id="minute">00</h4>
+                    <h5>Minutes</h5>
+                </div>
+                <div class="item">
+                    <h4 id="second">00</h4>
+                    <h5>Seconds</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var day = document.getElementById("day")
+        var hour = document.getElementById("hour")
+        var minute = document.getElementById("minute")
+        var second = document.getElementById("second")
+        var itemsDiv = document.querySelector(".items")
+        var heading = document.getElementById("heading")
+
+        var targetTime = new Date(2025,0)
+        setInterval(()=>{
+            var currentTime = new Date()
+            var diff = targetTime-currentTime
+            if(diff>0){
+                let num = parseInt(diff/(1000*60*60*24))
+                if(num<10)
+                num = "0"+num
+                day.innerHTML = num
+
+                num = parseInt(diff%(1000*60*60*24)/(1000*60*60))
+                if(num<10)
+                num = "0"+num
+                hour.innerHTML = num
+
+                num = parseInt(diff%(1000*60*60)/(1000*60))
+                if(num<10)
+                num = "0"+num
+                minute.innerHTML = num
+
+                num = parseInt(diff%(1000*60)/1000)
+                if(num<10)
+                num = "0"+num
+                second.innerHTML = num
+            }
+            else{
+                document.querySelector(".center").removeChild(itemsDiv)
+                heading.innerHTML= "Happy New Year 2025"
+            }
+        },1000)
+    </script>
+</body>
+
+</html>
